@@ -1,0 +1,10 @@
+2026/09/12  16:19:49.707  [TRACE]   MrAcqSimulationPlugin: Plugin::init(): started
+2026/09/12  16:19:49.707  [TRACE]   MrAcqSimulationPlugin: SimulationServant_impl::SimulationServant_impl(): started/finished
+2026/09/12  16:19:49.707  [TRACE]   MrAcqSimulationPlugin: Plugin::init(): return true
+2026/09/12  16:19:49.707  [TRACE]   MrAcqSimulationPlugin: Plugin::afterStart(): started
+2026/09/12  16:19:49.707  [TRACE]   MrAcqSimulationPlugin: Plugin::afterStart(): return true
+2026/09/12  16:19:49.707  [INFO]    MxiAcqRecoPlugin: Plugin::init(): run 'reco -psMode 87 -prototypeMode 0 -procnoPath /opt/nmrdata/PV-360.3.5/data/pipvuser/20260912_110817_M02841980_RM_Inflammation_LPS_Dose_Pilot_Post_2_1_2/7/pdata/5 -serverName MxiAcqReco_2.16.756.5.5.200.27483612.3801193.1789226383.3530_82049_32680146672_87 -logSeverityLevel SL_INFO ')
+2026/09/12  16:19:51.663  [INFO]    MxiAcqRecoPlugin: Plugin::beforeStop(): finished
+2026/09/12  16:19:51.664  [TRACE]   MrAcqSimulationPlugin: Plugin::beforeStop(): started
+2026/09/12  16:19:51.664  [TRACE]   MrAcqSimulationPlugin: Plugin::beforeStop(): return true
+2026/09/12  16:19:51.665  [TRACE]   MrAcqSimulationPlugin: SimulationServant_impl::~SimulationServant_impl(): started/finished

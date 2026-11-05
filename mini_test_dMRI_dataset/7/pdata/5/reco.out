@@ -1,0 +1,13 @@
+##TITLE=Parameter List, ParaVision 360 V3.5
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=pipvuser
+$$ Write Options: Symbolic Enums, RLE encoded arrays, symbol visibility
+$$ 2026-09-12 16:19:51.501 +0100  pipvuser@bmsws5
+$$ /opt/nmrdata/PV-360.3.5/data/pipvuser/20260912_110817_M02841980_RM_Inflammation_LPS_Dose_Pilot_Post_2_1_2/7/pdata/5/reco.out
+$$ process /opt/PV-360.3.5/prog/bin/parxserver
+##$RECO_abs_time=(1789226391, 457, 60)
+$$ @vis= RECO_OUT RECO_abs_time
+##END=
+$$ File finished by PARX at 2026-09-12 16:19:51.501 +0100

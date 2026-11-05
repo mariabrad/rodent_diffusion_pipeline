@@ -1,0 +1,15 @@
+##TITLE=Parameter List, ParaVision 360 V3.5
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=pipvuser
+$$ Write Options: Symbolic Enums
+$$ 2026-09-12 16:19:43.635 +0100  pipvuser@bmsws5
+$$ /opt/nmrdata/PV-360.3.5/data/pipvuser/20260912_110817_M02841980_RM_Inflammation_LPS_Dose_Pilot_Post_2_1_2/7/pdata/5/id
+$$ process /opt/PV-360.3.5/prog/bin/parxserver
+##$DATASET_KEY=( 65 )
+<2.16.756.5.5.200.27483612.3801193.1789226383.3530>
+##$DATASET_Modality=MR_Modality
+##$DATASET_ExperimentValid=Yes
+##END=
+$$ File finished by PARX at 2026-09-12 16:19:43.635 +0100
