@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-module add fsl
+module load FSL/6.0.7.17
 
 OUTDIR="$1"
 # Directory containing this script

@@ -1,8 +1,10 @@
 #!/bin/bash
-module add fsl
-module add MRtrix3/3.0.7
-module add mrdegibbs/20210623-GCC-12.3
-module load MATLAB/2024a
+module add FSL/6.0.7.17
+source $FSLDIR/etc/fslconf/fsl.sh
+module add MRtrix/3.0.4-foss-2022b
+module load MATLAB/2024b
+
+export PATH=~/local_bin:$PATH
 
 # Use really strict error handling. If any command fails, the script will exit immediately rather than keep running silently.
 set -euo pipefail
