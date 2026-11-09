@@ -616,7 +616,7 @@ echo "[INFO] Confirmed volume 0 is a b0."
 echo "[INFO] Using first volume of first shell as TOPUP blip-up."
 
 # Extract blip-up
-fslroi "$FIRST_SHELL_B0" "${OUTDIR}/b0_blipup.nii.gz" 0 1
+fslroi "${RAWDIR}/9/pdata/1/nifti/BCAN_15_2e_T2w_QSM_Diffusion_9_1_1.nii" "${OUTDIR}/b0_blipup.nii.gz" 0 1
 
 # --------------------------------------------------------------------------
 # Check matrix dimensions before copying geometry
