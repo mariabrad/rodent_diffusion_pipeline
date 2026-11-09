@@ -412,25 +412,6 @@ inputdata="${OUTDIR}/data_complex_denoised_reoriented.nii.gz"
 cp "$inputdata_original" "$inputdata"
 
 # Set correct voxel dimensions before swapping axes
-fslchpixdim "$inputdata" 0.3 0.3 0.6
-
-# Reorient image:
-# new x = old x
-# new y = old z
-# new z = -old y
-fslswapdim "$inputdata" x z -y "$inputdata"
-
-# Set qform corresponding to the reoriented image
-fslorient -setqform \
-    0.3 0   0   0 \
-    0   0.6 0   0 \
-    0   0   0.3 0 \
-    0   0   0   1 \
-    "$inputdata"
-
-fslorient -copyqform2sform "$inputdata"
-fslorient -setqformcode 1 "$inputdata"
-fslorient -setsformcode 1 "$inputdata"
 
 echo "[INFO] Reoriented data written to:"
 echo "       $inputdata"
@@ -481,10 +462,6 @@ python3 ${BIN_SUBDIR_PATH}/transform_bvecs.py "${OUTDIR}/bvecs" "${OUTDIR}/bvecs
 
 cp "${OUTDIR}/bvecs" "${OUTDIR}/bvecs_original_image_space"
 
-# Original reconstructed NIfTI -> analysis space
-${BIN_SUBDIR_PATH}/reorient_bvecs.sh \
-    "${OUTDIR}/bvecs" \
-    forward
 
 # CHECKPOINT 4: Drift correction. Decide what method to use based on: 1. if b0s are sufficiently interleaved; 2. the users optional DRIFT_METHOD input
 B0_POSITIONS="${OUTDIR}/b0_positions.txt"
