@@ -477,10 +477,7 @@ ${BIN_SUBDIR_PATH}/extract_bvecs_bvals.sh "${OUTDIR}" "$shell_folders_list" "$re
 # Preserve raw extracted gradients for QC
 cp "${OUTDIR}/bvecs" "${OUTDIR}/bvecs_raw_extracted"
 
-# Raw Bruker gradient coordinates -> original reconstructed NIfTI
-${BIN_SUBDIR_PATH}/reorient_bvecs.sh \
-    "${OUTDIR}/bvecs" \
-    bruker_to_image
+python3 ${BIN_SUBDIR_PATH}/transform_bvecs.py "${OUTDIR}/bvecs" "${OUTDIR}/bvecs"
 
 cp "${OUTDIR}/bvecs" "${OUTDIR}/bvecs_original_image_space"
 
