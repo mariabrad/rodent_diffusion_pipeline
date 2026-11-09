@@ -560,8 +560,8 @@ inputdata="${OUTDIR}/data_detrended.nii.gz"
 # perform Gibbs ringing correction on the merged data
 echo ">>> [CHECKPOINT 5]: Gibbs ringing correction"
 if [[ "${ACQ_DIM}" == "3D" ]]; then
-  echo "[INFO] 3D acquisition detected — using deGibbs3D"
-  deGibbs3D "${inputdata}" "${OUTDIR}/data_gibbs.nii.gz" &> "${OUTDIR}/logs/degibbs3d.log"
+  echo "[INFO] 3D acquisition detected — Gibbs correction SKIPPED (temporary)"
+  cp "${inputdata}" "${OUTDIR}/data_gibbs.nii.gz"
 else
   echo "[INFO] 2D acquisition detected — using MRtrix mrdegibbs"
   mrdegibbs -force "${inputdata}" "${OUTDIR}/data_gibbs.nii.gz" &> "${OUTDIR}/logs/mrdegibbs.log"
