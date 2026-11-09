@@ -43,8 +43,8 @@ if (( $(echo "$total_readout < 0.01" | bc -l) )); then
 fi
 
 cat > "${outputdir}/acp.txt" <<EOF
-0 1 0 ${total_readout}
-0 -1 0 ${total_readout}
+1 0 0 ${total_readout}
+-1 0 0 ${total_readout}
 EOF
 
 echo "[INFO] Wrote ${outputdir}/acp.txt"
