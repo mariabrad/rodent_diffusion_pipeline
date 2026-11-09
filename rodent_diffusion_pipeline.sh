@@ -410,6 +410,7 @@ inputdata_original="${OUTDIR}/data_complex_denoised.nii.gz"
 inputdata="${OUTDIR}/data_complex_denoised_reoriented.nii.gz"
 
 cp "$inputdata_original" "$inputdata"
+fslcpgeom "${OUTDIR}/blipdown.nii.gz" "$inputdata" -d
 
 # Set correct voxel dimensions before swapping axes
 
@@ -551,6 +552,7 @@ echo "[INFO] Returning Gibbs-corrected data to original orientation for Eddy."
 EDDY_DATA="${OUTDIR}/data_gibbs_eddyspace.nii.gz"
 
 cp "${OUTDIR}/data_gibbs.nii.gz" "$EDDY_DATA"
+fslcpgeom "${OUTDIR}/blipdown.nii.gz" "$EDDY_DATA" -d
 
 # Inverse of: x z -y
 #
@@ -558,19 +560,9 @@ cp "${OUTDIR}/data_gibbs.nii.gz" "$EDDY_DATA"
 # new y = -old z
 # new z = old y
 
-fslswapdim \
-    "$EDDY_DATA" \
-    x -z y \
-    "$EDDY_DATA"
-
-# Original voxel dimensions
-fslchpixdim \
-    "$EDDY_DATA" \
-    0.3 0.3 0.6
 
 cp "${OUTDIR}/bvecs" "${OUTDIR}/bvecs_eddyspace"
 
-${BIN_SUBDIR_PATH}/reorient_bvecs.sh "${OUTDIR}/bvecs_eddyspace" inverse
 
 # prepare TOPUP input by extracting the first b0 and merging with blipdown
 FIRST_SHELL_B0="${OUTDIR}/all_shells/all_shells_combined_mag_sum.nii.gz"
